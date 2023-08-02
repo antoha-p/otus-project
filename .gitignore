@@ -1,1 +1,72 @@
-.vs
+# Исключить временные файлы
+[Oo]bj/
+[Bb]in/
+*.user
+*.vscode/
+*.suo
+*.cache
+*.tmp
+*.vs/
+
+# Исключить файлы с расширением .dll и .exe, так как они создаются компилятором
+*.dll
+*.exe
+
+# Исключить файлы, содержащие конфиденциальную информацию, такие как ключи API и пароли
+appsettings.json
+appsettings.Development.json
+
+# Исключить файлы, создаваемые средой Visual Studio
+*.sln.docstates
+*.suo
+*.user
+*.userprefs
+*.vspscc
+*.vssscc
+*.vspx
+*.VC.db
+*.VC.VC.opendb
+
+# Исключить файлы журналов и отладочную информацию
+*.log
+*.vsps
+*.vsp
+
+# Исключить файлы, создаваемые автоматически
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Исключить файлы пакетного менеджера NuGet
+packages/
+
+# Исключить файлы, связанные с восстановлением пакетов NuGet
+*.nuget.props
+*.nuget.targets
+
+# Исключить файлы, создаваемые при сборке проекта
+_ReSharper.*/
+*.ReSharper*/
+[Tt]humbs.db
+*.suo
+*.user
+*.aps
+*.resharper
+*.vspscc
+*.vssscc
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+
+# Исключить файлы Roslyn
+*.ide
+
+# Исключить файлы для отладки и профилирования
+*.pdb
+*.gcda
+*.gcno
+
+# Исключить файлы отчетов и аналитики
+*.esproj
+
+# Исключить папку с кэшем решения
+*.vs/
