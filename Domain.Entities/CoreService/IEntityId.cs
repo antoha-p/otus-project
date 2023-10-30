@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities.MicroServiceCore.Entities;
+﻿namespace Domain.Entities.CoreService;
 
 public interface IEntityId
 {

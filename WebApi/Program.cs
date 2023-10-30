@@ -1,8 +1,8 @@
-using Infrastructure.EntityFramework.MicroServiceCore;
+using Infrastructure.EntityFramework.CoreService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using WebApi.Extensions;
-using WebApi.Filters;
+using CoreService.WebApi.Extensions;
+using CoreService.WebApi.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +17,9 @@ builder.Services.AddSwaggerGen(c =>
     c.EnableAnnotations();
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Микросервис ядра", Version = "v1" });
 });
-builder.Services.AddAutoMapper(typeof(Program).Assembly, typeof(MicroServiceCoreDBContext).Assembly);
+builder.Services.AddAutoMapper(typeof(Program).Assembly, typeof(CoreServiceDBContext).Assembly);
 ConfigurationManager configuration = builder.Configuration;
-builder.Services.AddDbContext<MicroServiceCoreDBContext>(options => options
+builder.Services.AddDbContext<CoreServiceDBContext>(options => options
                 .UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers(x => x.Filters.Add(typeof(ApiExceptionFilter)));
 var app = builder.Build();

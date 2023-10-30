@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
-namespace Domain.Entities.MicroServiceCore.Entities;
+namespace Domain.Entities.CoreService;
 
 /// <summary>
 /// заявка,которую получает ядро от пользователя

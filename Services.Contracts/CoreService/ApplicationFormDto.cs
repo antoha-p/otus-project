@@ -1,6 +1,6 @@
-﻿using Domain.Entities.MicroServiceCore.Entities;
+﻿using Domain.Entities.CoreService;
 
-namespace Services.Contracts;
+namespace Services.Contracts.CoreService;
 
 /// <summary>
 /// дто заявки,которую получает ядро от пользователя

@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Domain.Entities.MicroServiceCore.Entities;
+using CoreService.WebApi.Abstractions;
+using Domain.Entities.CoreService;
 using FluentValidation;
-using Services.Contracts;
-using Services.Repositories.Abstractions.MicroServiceCore.Repositories.Abstractions;
-using WebApi.Abstractions;
-namespace WebApi.Controllers;
+using Services.Contracts.CoreService;
+using Services.Repositories.Abstractions.CoreService;
+
+namespace CoreService.WebApi.Controllers;
 
 public class ApplicationFormController : BaseCRUDController<ApplicationForm,ApplicationFormDto>
 {

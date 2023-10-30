@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using Services.Contracts;
-namespace WebApi.Validators;
+using Services.Contracts.CoreService;
+namespace CoreService.WebApi.Validators;
 
 /// <summary>
 /// добавляем правила валидации для ДТО

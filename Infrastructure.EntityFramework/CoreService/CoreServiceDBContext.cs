@@ -1,12 +1,12 @@
-﻿using Domain.Entities.MicroServiceCore.Entities;
+﻿using Domain.Entities.CoreService;
 using Microsoft.EntityFrameworkCore;
-namespace Infrastructure.EntityFramework.MicroServiceCore;
+namespace Infrastructure.EntityFramework.CoreService;
 
-public class MicroServiceCoreDBContext : DbContext
+public class CoreServiceDBContext : DbContext
 {
     public DbSet<ApplicationForm> ApplicationForms { get; set; }
     public DbSet<EventLogEntity> EventLogs { get; set; }
-    public MicroServiceCoreDBContext(DbContextOptions<MicroServiceCoreDBContext> options) : base(options)
+    public CoreServiceDBContext(DbContextOptions<CoreServiceDBContext> options) : base(options)
     {
         //Database.EnsureDeleted();
         //Database.EnsureCreated();

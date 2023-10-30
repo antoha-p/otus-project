@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Repositories
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Exceptions", "Services.Exceptions\Services.Exceptions.csproj", "{9E155EFD-8B39-4636-A500-E76948ADD04F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServiceCore.WebApi", "WebApi\MicroServiceCore.WebApi.csproj", "{EB4C83C7-7A74-4465-A69D-5BA15651CA9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreService.WebApi", "WebApi\CoreService.WebApi.csproj", "{EB4C83C7-7A74-4465-A69D-5BA15651CA9B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Implementations", "Services.Implementations\Services.Implementations.csproj", "{4AC6B5DA-9FC1-4A8A-8F76-1682683B64D1}"
 EndProject

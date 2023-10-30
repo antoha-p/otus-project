@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Services.Exceptions.MicroServiceCore.Exceptions;
+namespace Services.Exceptions.CoreService;
 
 /// <summary>
 /// Класс исключений для информирования об ошибке при работе с данными 

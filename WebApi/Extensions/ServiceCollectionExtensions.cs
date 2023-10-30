@@ -1,12 +1,13 @@
-﻿using Domain.Entities.MicroServiceCore.Entities;
+﻿using CoreService.WebApi.Validators;
+using Domain.Entities.CoreService;
 using FluentValidation;
 using Infrastructure.Repositories.Implementations.MicroServiceCore.Repositories;
-using Services.Abstractions.MicroServiceCore.Abstractions;
-using Services.Contracts;
-using Services.Implementations.MicroServiceCore.Implementations;
-using Services.Repositories.Abstractions.MicroServiceCore.Repositories.Abstractions;
-using WebApi.Validators;
-namespace WebApi.Extensions;
+using Services.Abstractions.CoreService;
+using Services.Contracts.CoreService;
+using Services.Implementations.CoreService;
+using Services.Repositories.Abstractions.CoreService;
+
+namespace CoreService.WebApi.Extensions;
 
 internal static class ServiceCollectionExtensions
 {

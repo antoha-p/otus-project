@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
-using Domain.Entities.MicroServiceCore.Entities;
-using Services.Abstractions.MicroServiceCore.Abstractions;
-using Services.Repositories.Abstractions.MicroServiceCore.Repositories.Abstractions;
+using Domain.Entities.CoreService;
+using Services.Abstractions.CoreService;
+using Services.Repositories.Abstractions.CoreService;
 
-namespace Services.Implementations.MicroServiceCore.Implementations;
+namespace Services.Implementations.CoreService;
 
 /// <summary>
 /// Сервис лога событий

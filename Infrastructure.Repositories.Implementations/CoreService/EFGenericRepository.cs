@@ -1,17 +1,17 @@
-﻿using Domain.Entities.MicroServiceCore.Entities;
-using Infrastructure.EntityFramework.MicroServiceCore;
+﻿using Domain.Entities.CoreService;
+using Infrastructure.EntityFramework.CoreService;
 using Microsoft.EntityFrameworkCore;
-using Services.Exceptions.MicroServiceCore.Exceptions;
-using Services.Repositories.Abstractions.MicroServiceCore.Repositories.Abstractions;
+using Services.Exceptions.CoreService;
+using Services.Repositories.Abstractions.CoreService;
 using System.Linq.Expressions;
 namespace Infrastructure.Repositories.Implementations.MicroServiceCore.Repositories;
 
 public class EFGenericRepository<TEntity> : IEFGenericRepository<TEntity> where TEntity : class, IEntityId
 {
-    private readonly MicroServiceCoreDBContext _context;
+    private readonly CoreServiceDBContext _context;
     private readonly DbSet<TEntity> _dbSet;
 
-    public EFGenericRepository(MicroServiceCoreDBContext context)
+    public EFGenericRepository(CoreServiceDBContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
         _dbSet = context.Set<TEntity>();

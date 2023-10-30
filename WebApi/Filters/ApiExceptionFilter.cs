@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Services.Abstractions.MicroServiceCore.Abstractions;
-using Services.Implementations;
+using Services.Abstractions.CoreService;
 using System.Diagnostics;
 using System.Net;
 
-namespace WebApi.Filters;
+namespace CoreService.WebApi.Filters;
 
 public class ApiExceptionFilter : IExceptionFilter
 {

@@ -1,4 +1,4 @@
-﻿namespace Services.Abstractions.MicroServiceCore.Abstractions;
+﻿namespace Services.Abstractions.CoreService;
 
 public interface IEventLogService
 {

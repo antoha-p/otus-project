@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Domain.Entities.MicroServiceCore.Entities;
+using Domain.Entities.CoreService;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using Services.Repositories.Abstractions.MicroServiceCore.Repositories.Abstractions;
+using Services.Repositories.Abstractions.CoreService;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace WebApi.Abstractions;
+namespace CoreService.WebApi.Abstractions;
 
 /// <summary>
 /// Базовый абстрактный класс для реализации контроллера со стандартным набором CRUD-операций

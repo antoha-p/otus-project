@@ -1,6 +1,6 @@
-﻿using Domain.Entities.MicroServiceCore.Entities;
+﻿using Domain.Entities.CoreService;
 using System.Linq.Expressions;
-namespace Services.Repositories.Abstractions.MicroServiceCore.Repositories.Abstractions;
+namespace Services.Repositories.Abstractions.CoreService;
 
 public interface IEFGenericRepository<TEntity> where TEntity : class, IEntityId
 {

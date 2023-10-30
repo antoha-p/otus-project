@@ -1,4 +1,4 @@
-﻿namespace Services.Exceptions.MicroServiceCore.Exceptions;
+﻿namespace Services.Exceptions.CoreService;
 public class ExceptionConstants
 {
     public const string CreateDataExceptionMessage = "Ошибка при создании записи";

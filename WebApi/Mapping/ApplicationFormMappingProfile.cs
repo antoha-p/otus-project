@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Domain.Entities.MicroServiceCore.Entities;
-using Services.Contracts;
-namespace WebApi.Mapping;
+using Domain.Entities.CoreService;
+using Services.Contracts.CoreService;
+namespace CoreService.WebApi.Mapping;
 
 internal class ApplicationFormMappingProfile:Profile
 {
