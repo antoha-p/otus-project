@@ -5,7 +5,7 @@ namespace Domain.Entities.CoreService;
 public class EventLogEntity : IEntityId
 {
     [Key]
-    public int Id { get; set; }
+    public long Id { get; set; }
 
     /// <summary>
     /// Дата возникновения события

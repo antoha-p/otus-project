@@ -12,10 +12,6 @@
 *.dll
 *.exe
 
-# Исключить файлы, содержащие конфиденциальную информацию, такие как ключи API и пароли
-appsettings.json
-appsettings.Development.json
-
 # Исключить файлы, создаваемые средой Visual Studio
 *.sln.docstates
 *.suo

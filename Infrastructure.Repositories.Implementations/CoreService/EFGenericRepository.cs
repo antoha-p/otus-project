@@ -8,10 +8,10 @@ namespace Infrastructure.Repositories.Implementations.MicroServiceCore.Repositor
 
 public class EFGenericRepository<TEntity> : IEFGenericRepository<TEntity> where TEntity : class, IEntityId
 {
-    private readonly CoreServiceDBContext _context;
+    private readonly CoreDBContext _context;
     private readonly DbSet<TEntity> _dbSet;
 
-    public EFGenericRepository(CoreServiceDBContext context)
+    public EFGenericRepository(CoreDBContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
         _dbSet = context.Set<TEntity>();

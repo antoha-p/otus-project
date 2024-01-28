@@ -3,7 +3,7 @@ using Domain.Entities.CoreService;
 using Services.Contracts.CoreService;
 namespace CoreService.WebApi.Mapping;
 
-internal class ApplicationFormMappingProfile:Profile
+internal class ApplicationFormMappingProfile : Profile
 {
     public ApplicationFormMappingProfile()
     {
@@ -19,5 +19,5 @@ internal class ApplicationFormMappingProfile:Profile
             .ForMember(d => d.Inn, opt => opt.MapFrom(src => src.Inn))
             .ForMember(d => d.FullName, opt => opt.MapFrom(src => GetFullName(src)));
     }
-    private string GetFullName(ApplicationFormDto dto)=>dto.FirstName+ " "+ dto.SecondName+" "+ dto.LastName;
+    private string GetFullName(ApplicationFormDto dto) => dto.FirstName + " " + dto.SecondName + " " + dto.LastName;
 }

@@ -6,5 +6,5 @@ namespace Infrastructure.Repositories.Implementations.MicroServiceCore.Repositor
 
 public class ApplicationFormRepository : EFGenericRepository<ApplicationForm>, IApplicationFormRepository
 {
-    public ApplicationFormRepository(CoreServiceDBContext context) : base(context) { }
+    public ApplicationFormRepository(CoreDBContext context) : base(context) { }
 }
