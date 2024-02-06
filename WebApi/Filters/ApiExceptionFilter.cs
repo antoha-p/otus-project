@@ -27,7 +27,7 @@ public class ApiExceptionFilter : IExceptionFilter
         }
         else
         {
-            eventMsg= $"В методе {context.ActionDescriptor.DisplayName} возникло исключение: \n {eventMsg} \n {context.Exception.StackTrace}";
+            eventMsg = $"В методе {context.ActionDescriptor.DisplayName} возникло исключение: \n {eventMsg} \n {context.Exception.StackTrace}";
         }
         context.ExceptionHandled = true;
         context.Result = new ContentResult
