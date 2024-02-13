@@ -1,8 +1,10 @@
 ﻿using CoreService.WebApi.Validators;
 using Domain.Entities.CoreService;
 using FluentValidation;
+using Infrastructure.Masstransit;
 using Infrastructure.Repositories.Implementations.MicroServiceCore.Repositories;
 using Services.Abstractions.CoreService;
+using Services.Abstractions.Masstransit;
 using Services.Contracts.CoreService;
 using Services.Implementations.CoreService;
 using Services.Repositories.Abstractions.CoreService;
@@ -20,6 +22,7 @@ internal static class ServiceCollectionExtensions
                 .AddScoped<IEFGenericRepository<ApplicationForm>, EFGenericRepository<ApplicationForm>>()
                 .AddScoped<IEFGenericRepository<EventLogEntity>, EFGenericRepository<EventLogEntity>>()
                 .AddScoped<IValidator<ApplicationFormDto>, ApplicationFormValidator>()
+                .AddScoped<IMassTransitHelper, MassTransitHelper>()
                 .AddScoped<IEventLogService, EventLogService>();
 
         return services;

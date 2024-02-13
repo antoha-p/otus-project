@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
 using Domain.Entities.CoreService;
 using FluentValidation;
+using Infrastructure.Masstransit;
 using Microsoft.AspNetCore.Mvc;
+using Services.Abstractions.Masstransit;
+using Services.Contracts.Masstransit;
 using Services.Repositories.Abstractions.CoreService;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -24,9 +27,13 @@ public abstract class BaseCRUDController<TEntity, TEntityDTO> : ControllerBase
     protected readonly IMapper _mapper;
     protected readonly IValidator<TEntityDTO> _createValidator;
     protected readonly IValidator<TEntityDTO> _updateValidator;
+    protected readonly IMassTransitHelper _massTransit;
 
-    protected BaseCRUDController(IEFGenericRepository<TEntity> baseRepo, IMapper mapper, IValidator<TEntityDTO> createValidator, IValidator<TEntityDTO> updateValidator)
+    protected BaseCRUDController(IEFGenericRepository<TEntity> baseRepo, IMapper mapper,
+                                 IValidator<TEntityDTO> createValidator, IValidator<TEntityDTO> updateValidator,
+                                 IMassTransitHelper massTransit)
     {
+        _massTransit = massTransit ?? throw new ArgumentNullException(nameof(massTransit));
         _baseRepo = baseRepo ?? throw new ArgumentNullException(nameof(baseRepo));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         _createValidator = createValidator ?? throw new ArgumentNullException(nameof(createValidator));
@@ -40,8 +47,16 @@ public abstract class BaseCRUDController<TEntity, TEntityDTO> : ControllerBase
     [SwaggerOperation(Summary = "Получение списка объектов")]
     public virtual async Task<ActionResult<IEnumerable<TEntityDTO>>> Get()
     {
-        IEnumerable<TEntity> entities = await _baseRepo.GetAllAsync();
-        return Ok(_mapper.Map<IEnumerable<TEntityDTO>>(entities));
+        var message = new MessageDto() { MessageText="First"};
+        await _massTransit.SendMessageAsync(message, MassTransitConstants.MassTransitFirstQueueName);
+        await Task.Delay(300);
+        var messageSecond = new MessageDto() { MessageText = "Second" };
+        await _massTransit.SendMessageAsync(messageSecond, MassTransitConstants.MassTransitSecondQueueName);
+        await Task.Delay(300);
+        //await _massTransit.ReceiveMessageAsync(MassTransitConstants.MassTransitQueueName);
+        return Ok();
+        //IEnumerable<TEntity> entities = await _baseRepo.GetAllAsync();
+        //return Ok(_mapper.Map<IEnumerable<TEntityDTO>>(entities));
     }
 
     [HttpGet("{id}")]
